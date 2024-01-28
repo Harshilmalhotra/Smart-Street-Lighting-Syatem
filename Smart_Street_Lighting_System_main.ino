@@ -1,4 +1,18 @@
- // 
+/*
+############################################################################################################
+© Harshil Malhotra
+
+Project name:- Smart Street Light System
+Author:- Harshil Malhotra 
+Last Updated:- 25-November-2023
+Github Link:- https://github.com/Harshilmalhotra/Smart-Street-Lighting-System
+
+Note:- Kindly go through the instructions in Github Repository
+
+############################################################################################################
+*/
+
+
 const int ldr = A0;
 int lsensor;
 const int relay=12;
@@ -20,19 +34,19 @@ void setup()
 void loop() 
 {
   int lsensor = analogRead(ldr); // reads   analog data from light sensor
-  int irsensor= digitalRead(ir); // Set the GPIO as Input
+  int irsensor= digitalRead(ir); // Set the Arduino pin as Input
   
   Serial.print(lsensor);
   Serial.println();
   
-  if(lsensor<70)
+  if(lsensor<70)   //Enter the approximate value when light turns on . You can get it from serial monitor of Calibration_LDR.ino code.
   {
     
 
     if (irsensor == 0) // Check if the pin high or not
   {
     // if the pin is high turn off the onboard Led
-    digitalWrite(LED_BUILTIN, HIGH);// print Motion Detected! on the serial monitor window
+    digitalWrite(LED_BUILTIN, HIGH);
     analogWrite(led, 200);
     digitalWrite(relay, LOW);
     delay(2000);

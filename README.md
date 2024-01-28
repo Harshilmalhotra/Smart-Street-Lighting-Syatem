@@ -1,4 +1,4 @@
-# Automatic Street Light System
+# Smart Street Lighting System
 
 ## Problem Statement
 
